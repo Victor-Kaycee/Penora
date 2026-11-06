@@ -1,0 +1,207 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --red: #eb2020;
+    --red-dark: #5a0505;
+    --red-soft: rgba(235, 32, 32, 0.08);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 9px;
+    --shadow: 0 4px 28px rgba(0, 0, 0, 0.07);
+    --ink: #1b1418;
+    --ink-soft: #6f6468;
+    --line: #ece5e6;
+    --bg: #faf7f7;
+    --card: #ffffff;
+    --font-display: "Syne", sans-serif;
+    --font-body: "Outfit", serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--card);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 22px clamp(14px, 2.5vw, 28px) 48px;
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    scrollbar-width: none;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.banner {
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    font-size: 14.5px;
+    font-weight: 500;
+}
+
+.banner-success {
+    background: rgba(30, 107, 58, 0.1);
+    color: #1e6b3a;
+    border: 1.5px solid rgba(30, 107, 58, 0.25);
+}
+
+.banner-error {
+    background: var(--red-soft);
+    color: var(--red-dark);
+    border: 1.5px solid rgba(235, 32, 32, 0.25);
+}
+
+.editor {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    font-family: var(--font-body);
+    font-size: 15.5px;
+    color: var(--ink);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 13px 16px;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    width: 100%;
+}
+
+#title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    padding: 14px 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 240px;
+    line-height: 1.6;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px var(--red-soft);
+}
+
+.field.invalid input,
+.field.invalid select,
+.field.invalid textarea {
+    border-color: var(--red);
+    box-shadow: 0 0 0 4px var(--red-soft);
+}
+
+.error-msg {
+    color: var(--red);
+    font-size: 12.5px;
+    font-weight: 500;
+}
+
+.field-hint {
+    font-size: 12px;
+    color: #a89a9d;
+}
+
+.current-image {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.current-image img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--line);
+}
+
+.current-image-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.form-actions .btn-primary {
+    padding: 12px 24px;
+    background: var(--red);
+    color: var(--card);
+    border-radius: 10px;
+}
+
+.form-actions .btn-ghost {
+    padding: 12px 24px;
+    background: var(--line);
+    /* color: var(--card); */
+    border-radius: 10px;
+}

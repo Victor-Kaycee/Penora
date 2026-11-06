@@ -1,0 +1,489 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap');
+
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #eb2020;
+  --first-color-light: #868585;
+  --text-light: #e1e0e6;
+  --bg-light: #d6d5da4d;
+  --bg-color: #0d0a24;
+  --text-color: #13131B;
+  --white-color: #f8f9fa;
+  --text-color-light: hsl(203, 8%, 80%);
+  --white-bg: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Outfit", serif;
+  --header-font: "Syne", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--black-color);
+}
+
+p,
+span {
+  font-family: var(--body-font);
+  font-size: 15px;
+  font-weight: 300
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--white-bg);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--body-font);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  /* max-width: 1224px;
+  margin-inline: 2rem; */
+}
+
+.main {
+  overflow: hidden;
+  /* For the animations */
+}
+
+
+/* .login {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.login-grid {
+  display: flex;
+}
+
+.login-background  {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4) 30%, rgb(0, 0, 0, .4) 70%), url(../img/login-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 2;
+  transform: rotateY(180deg);
+}
+
+.login-form {
+  flex: 2;
+  padding: 7rem 2rem 2rem;
+}
+
+.form-logo {
+ text-align: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.form-logo img  {
+  width: 150px;
+}
+
+.input-div {
+  border-bottom: 1px solid #666;
+  padding: 20px 0;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+.input-div input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background: var(--white-bg);
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+.input-div input::placeholder {
+  color: var(--text-color-light);
+  font-family: var(--body-font);
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.forgot {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.forgot a {
+  font-weight: 400;
+  color: var(--first-color);
+  text-decoration: underline;
+}
+
+.sign-in {
+  background: var(--first-color);
+  color: var(--white-color);
+  font-family: var(--body-font);
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.sign-up {
+  text-align: center;
+}
+
+.sign-up a {
+  color: var(--first-color);
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .login {
+    overflow: scroll;
+  }  
+
+  .login-grid {
+    display: flex;
+    flex-direction: column;
+  }
+} */
+
+
+.container {
+  max-width: 100%;
+  background: #fff;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+/* LEFT SIDE */
+
+.left {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left h1 {
+  font-size: 42px;
+  font-family: var(--header-font);
+  color: #111;
+  margin-bottom: 10px;
+  /* font-weight: 300; */
+}
+
+.left h1 span {
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.social-login {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.social-btn {
+  flex: 1;
+  height: 52px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 400;
+  transition: 0.3s;
+  font-family: var(--body-font);
+}
+
+.social-btn:hover {
+  background: #f7f7f7;
+}
+
+.divider {
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+  font-family: var(--body-font);
+}
+
+.input-box input::placeholder {
+  font-family: var(--body-font);
+}
+
+.input-box input:focus {
+  border-color: #111;
+}
+
+.eye {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  cursor: pointer;
+}
+
+.forgot {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.forgot a {
+  color: var(--first-color);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-btn {
+  width: 100%;
+  height: 58px;
+  border: none;
+  background: var(--first-color);
+  color: #fff;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: var(--first-color);
+}
+
+.signup {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #777;
+}
+
+.signup a {
+  color: var(--first-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* RIGHT SIDE */
+
+.right {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.logo img {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.quote {
+  max-width: 500px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.slider {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.line {
+  width: 50px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.line.active {
+  background: #fff;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .left {
+    padding: 50px 30px;
+  }
+
+  .left h1 {
+    font-size: 34px;
+  }
+
+}

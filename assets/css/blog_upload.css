@@ -1,0 +1,194 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap');
+
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: #eb2020;
+    --first-color-light: #868585;
+    --text-light: #e1e0e6;
+    --bg-light: #d6d5da4d;
+    --bg-color: #0d0a24;
+    --text-color: #13131B;
+    --white-color: #f8f9fa;
+    --text-color-light: hsl(203, 8%, 80%);
+    --white-bg: #fff;
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Outfit", serif;
+    --header-font: "Syne", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+    :root {
+        --biggest-font-size: 4rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-color);
+}
+
+p,
+span {
+    font-family: var(--body-font);
+    font-size: 15px;
+    color: var(--text-color);
+    font-weight: 300
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--white-bg);
+    color: var(--text-color);
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--body-font);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+/*=============== LAYOUT ===============*/
+.layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 22px clamp(14px, 2.5vw, 28px) 48px;
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    scrollbar-width: none;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+
+.blog-post-form {
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.blog-first {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.blog-first input {
+    width: 100%;
+    padding: 12px 24px;
+    border: 1px solid #868585;
+    border-radius: 10px;
+    outline: none;
+    font-family: var(--body-font);
+}
+
+.blog-first input::placeholder {
+    font-family: var(--body-font);
+}
+
+.blog-post-form input {
+    font-family: var(--body-font);
+}
+
+.blog-post-form input::file-selector-button {
+    color: var(--text-color);
+    font-family: var(--body-font);
+}
+
+.blog-post-form textarea {
+    resize: none;
+    width: 100%;
+    height: 300px;
+    outline: none;
+    padding: 12px 24px;
+    border: 1px solid #868585;
+    border-radius: 10px;
+    outline: none;
+    font-family: var(--body-font);
+}
+
+.blog-post-form textarea::placeholder {
+    font-family: var(--body-font);
+}
+
+.blog-post-form button {
+    padding: 12px 24px;
+    border: none;
+    outline: none;
+    background: var(--first-color);
+    color: var(--white-bg);
+    font-family: var(--body-font);
+    border-radius: 10px;
+}

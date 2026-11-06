@@ -1,0 +1,482 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap');
+
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /* --header-height: 3.5rem; */
+
+    /*========== Colors ==========*/
+    /* Color mode HSL(hue, saturation, lightness) */
+    --first-color: #eb2020;
+    --first-color-light: #868585;
+    --text-light: #e1e0e6;
+    --bg-light: #d6d5da4d;
+    --bg-color: #0d0a24;
+    --text-color: #13131B;
+    --white-color: #f8f9fa;
+    --text-color-light: hsl(203, 8%, 80%);
+    --white-bg: #fff;
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Outfit", serif;
+    --header-font: "Syne", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+}
+
+/* Responsive typography */
+/* @media screen and (min-width: 1024px) {
+    :root {
+        --biggest-font-size: 4rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: .813rem;
+    }
+} */
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-color);
+}
+
+p,
+span {
+    font-family: var(--body-font);
+    font-size: 15px;
+    color: var(--text-color);
+    font-weight: 300
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--white-bg);
+    color: var(--text-color);
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--body-font);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  width: 100%;
+  max-width: 1224px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    margin-left: var(--sidebar-w);
+    transition: margin-left 0.3s ease;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-title {
+    font-family: var(--header-font);
+}
+
+.menu-toggle{
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #111;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-left{
+    display: flex;
+    align-items: center;
+}
+
+.nav-left h3{
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    text-transform: capitalize;
+}
+
+.topbar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-btn{
+    height: 45px;
+    min-width: 260px;
+    padding: 0 16px;
+    border-radius: 12px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #777;
+    cursor: pointer;
+}
+
+.right-s{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* =========================
+   ICON BUTTONS
+========================= */
+
+.notification-bell,
+.messages-box,
+.toggle{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    color: #111;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.notification-bell:hover,
+.messages-box:hover,
+.toggle:hover{
+    background: #ebebeb;
+}
+
+.notification-bell i,
+.messages-box i,
+.toggle i{
+    font-size: 18px;
+}
+
+/* =========================
+   COUNTS
+========================= */
+
+.notification-count,
+.messages-count{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #eb2020;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PROFILE */
+.profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: var(--white-bg);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 11111111;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropdown-links a {
+    color: var(--text-color);
+    font-weight: 3100;
+}
+
+.profile-container{
+    position: relative;
+}
+
+.profile-btn img{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+.profile-dropdown{
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 320px;
+    background: white;
+    border-radius: 28px;
+    padding: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.35s ease;
+
+    z-index: 1000;
+}
+
+.profile-dropdown.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-header img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-header h4{
+    font-size: 16px;
+    color: #111;
+}
+
+.dropdown-header span{
+    color: #777;
+    font-size: 13px;
+}
+
+.dropdown-links{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-links a{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: #222;
+    padding: 15px;
+    border-radius: 14px;
+    transition: 0.3s;
+    font-size: 15px;
+    position: relative;
+}
+
+.dropdown-links a:hover{
+    background: #f5f5f5;
+}
+
+.dropdown-links a i{
+    width: 20px;
+    font-size: 16px;
+}
+
+.dropdown-links a small{
+    margin-left: auto;
+    background: #ff8ce3;
+    color: #111;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.logout{
+    margin-top: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 18px !important;
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px){
+
+    .search-btn{
+        min-width: 180px;
+    }
+
+    .nav-left h3{
+        font-size: 22px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+    .navbar{
+        padding: 0 15px;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .search-btn{
+        display: none;
+    }
+
+    .nav-left h3{
+        font-size: 20px;
+    }
+
+    .right-s{
+        gap: 8px;
+    }
+
+    .notification-bell,
+    .messages-box,
+    .toggle{
+        width: 38px;
+        height: 38px;
+    }
+
+    .profile-btn img{
+        width: 38px;
+        height: 38px;
+    }
+
+    .profile-dropdown{
+        width: 240px;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px){
+
+    .navbar{
+        padding: 0 10px;
+    }
+
+    .nav-left h3{
+        font-size: 18px;
+    }
+
+    .toggle{
+        display: none;
+    }
+
+    .messages-box{
+        display: none;
+    }
+
+    .notification-bell,
+    .profile-btn img{
+        width: 34px;
+        height: 34px;
+    }
+
+    .profile-dropdown{
+        width: 220px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        margin-left: 0;
+    }
+}
